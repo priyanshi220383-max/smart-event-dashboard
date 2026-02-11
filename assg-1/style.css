@@ -1,0 +1,106 @@
+
+/* General Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    background: linear-gradient(135deg, rgb(34, 111, 204), rgb(42, 194, 207));
+    min-height: 100vh;
+    padding: 40px;
+    color: #333;
+}
+
+header h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+#main-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.dashboard { width: auto; max-width: 1000px; }
+
+#NewEvent, .controls {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+#NewEvent{
+    margin-right: 30px;
+}
+#events {
+  background-color: rgb(255, 255, 255);
+  height: 400px;
+  width: 400px;
+  border-radius: 15px;
+  margin-left: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  line-height: 45px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: grey;
+    box-shadow: gray;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 6px;
+    background: white;
+}
+
+/* Buttons */
+.btn.primary {
+    width: 100%;
+    background-color: rgb(14, 14, 129);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-secondary {
+    background-color:rgb(14, 14, 129);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.btn-primary:hover{
+    background-color:rgb(15, 15, 81) ;
+}
+
+#dom-demo {
+    background: white;
+    width: 600px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 30px;
+    
+}
+
+#main-dom-demo{
+    display: flex;
+    justify-content: center;
+}
