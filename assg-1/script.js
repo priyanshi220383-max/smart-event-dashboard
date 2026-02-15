@@ -1,12 +1,12 @@
-const eventForm = document.getElementById("EventForm");
-const eventTitle = document.getElementById("event title");
+const eventForm = document.getElementById("eventForm");
+const eventTitle = document.getElementById("eventTitle");
 const eventDate = document.getElementById("eventDate");
-const eventCategory = document.getElementById("select");
-const eventDescription = document.getElementById("description");
+const eventCategory = document.getElementById("eventCategory");
+const eventDescription = document.getElementById("eventDescription");
 
-const clearAllBtn = document.getElementById("clearEvents");
-const addSampleBtn = document.getElementById("AddSampleEvents");
-const eventContainer = document.getElementById("event-container");
+const clearAllBtn = document.getElementById("clearAllBtn");
+const addSampleBtn = document.getElementById("addSampleBtn");
+const eventContainer = document.getElementById("eventContainer");
 
 
 let sampleEvent =
@@ -25,9 +25,16 @@ let sampleEvent =
         }
     ]
 
+    //add sample events 
+    addSampleBtn.addEventListener("click",()=>{
+        sampleEvent.forEach(addEvent);
+    })
+
 //   create event card  
 function createEventCard(eventData){
     const card = document.createElement("div");
+    //assign a class name to the div
+    card.className = 'event-card';
     card.innerHTML=`
     <button class=delete-btn>X</button>
     <h3>${eventData.title}</h3>
@@ -39,6 +46,7 @@ function createEventCard(eventData){
 
 }
 
+//Add the card inside eventcontainer
 function addEvent(eventData){
   const emptyState=document.querySelector(".empty-state");
   if(emptyState) emptyState.remove();
@@ -46,7 +54,6 @@ function addEvent(eventData){
   eventContainer.appendChild(createEventCard(eventData));
 
 }
-
 
 eventForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -59,6 +66,12 @@ eventForm.addEventListener("submit", (event) => {
 
     addEvent(eventData);
     eventForm.reset();
-
 })
+
+//clear button to clear everything
+clearAllBtn.addEventListener("click",()=>{
+    eventContainer.innerHTML=`<div class="empty-state">No events yet. Add your first event!</div>
+    </div>`
+})
+
 
